@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Planet Fitness México | Entrena a tu ritmo con Pompopurin</title>
+<link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
+<style>
+:root {
+    --primary-dark: #6B3F69;
+    --primary-medium: #8D5F8C;
+    --primary-light: #A376A2;
+    --neutral-light: #DDC3C3;
+    --white: #ffffff;
+    --black: #333333;
+    --gray-light: #f6f4f7;
+    --accent: #FF9E6D;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: var(--white);
+    color: var(--black);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section {
+    padding: 100px 0;
+    position: relative;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.8rem;
+    color: var(--primary-dark);
+    margin-bottom: 70px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 5px;
+    background: linear-gradient(to right, var(--primary-medium), var(--accent));
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 5px;
+}
+
+/* HEADER - Mejorado con animación */
+header {
+    background: rgba(255, 255, 255, 0.95);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo img {
+    height: 60px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover img {
+    transform: scale(1.05);
+}
+
+.logo-text {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: var(--primary-dark);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+    align-items: center;
+}
+
+nav a {
+    font-weight: 600;
+    color: var(--primary-dark);
+    position: relative;
+    padding: 8px 0;
+    transition: color 0.3s ease;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: var(--accent);
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+nav a:hover {
+    color: var(--primary-medium);
+}
+
+.btn {
+    background: linear-gradient(135deg, var(--primary-medium), var(--primary-dark));
+    color: var(--white);
+    padding: 16px 36px;
+    border-radius: 30px;
+    font-weight: 700;
+    display: inline-block;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(141, 95, 140, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.7s ease;
+}
+
+.btn:hover::before {
+    left: 100%;
+}
+
+.btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(141, 95, 140, 0.4);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, var(--accent), #FF7B4A);
+    box-shadow: 0 5px 15px rgba(255, 158, 109, 0.3);
+}
+
+.btn-secondary:hover {
+    box-shadow: 0 10px 20px rgba(255, 158, 109, 0.4);
+}
+
+/* HERO - Rediseñado con animaciones */
+.hero {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-medium) 50%, var(--primary-light) 100%);
+    color: var(--white);
+    padding: 200px 0 150px;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    top: 10%;
+    right: 10%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 50%;
+    bottom: 15%;
+    left: 5%;
+    animation: float 8s ease-in-out infinite reverse;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+.hero-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.hero-bubble {
+    background: var(--neutral-light);
+    color: var(--primary-dark);
+    padding: 16px 30px;
+    border-radius: 25px;
+    display: inline-block;
+    font-weight: 700;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    animation: bounceIn 1s ease;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+}
+
+.hero p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.hero-promo {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 35px;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,255,255,0.2);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(255,255,255,0.2); }
+    70% { box-shadow: 0 0 0 15px rgba(255,255,255,0); }
+    100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+}
+
+.hero-price {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: var(--accent);
+    display: block;
+    margin: 10px 0;
+}
+
+.hero-image {
+    flex: 1;
+    text-align: center;
+    position: relative;
+}
+
+.hero-image img {
+    max-width: 400px;
+    width: 100%;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.2));
+    animation: float 6s ease-in-out infinite;
+    transition: transform 0.5s ease;
+}
+
+.hero-image img:hover {
+    transform: scale(1.05);
+}
+
+/* BENEFICIOS - Con tarjetas interactivas */
+.benefits {
+    background: var(--gray-light);
+    position: relative;
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.benefit-card {
+    background: var(--white);
+    border-radius: 25px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+}
+
+.benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, var(--primary-medium), var(--accent));
+}
+
+.benefit-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 25px 40px rgba(0,0,0,0.12);
+    border-color: var(--neutral-light);
+}
+
+.benefit-icon {
+    font-size: 3.5rem;
+    color: var(--primary-medium);
+    margin-bottom: 25px;
+    transition: transform 0.3s ease;
+}
+
+.benefit-card:hover .benefit-icon {
+    transform: scale(1.2);
+}
+
+.benefit-card h3 {
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    color: var(--primary-dark);
+}
+
+.benefit-card p {
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.benefit-card .pompo-img {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid var(--neutral-light);
+    transition: all 0.3s ease;
+}
+
+.benefit-card:hover .pompo-img {
+    border-color: var(--primary-medium);
+    transform: scale(1.1);
+}
+
+.benefit-card .pompo-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* MEMBRESÍAS - Con efecto de resaltado */
+.membership-plans {
+    display: flex;
+    gap: 50px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.membership-card {
+    max-width: 450px;
+    width: 100%;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    transition: all 0.4s ease;
+    position: relative;
+}
+
+.membership-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 50px rgba(0,0,0,0.15);
+}
+
+.card-header {
+    background: linear-gradient(135deg, var(--primary-medium), var(--primary-dark));
+    color: var(--white);
+    padding: 35px 30px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-header::before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+    top: -50%;
+    left: -50%;
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.card-header.premium {
+    background: linear-gradient(135deg, var(--primary-dark), #5a2d57);
+}
+
+.card-header h3 {
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
+}
+
+.card-price {
+    font-size: 3rem;
+    font-weight: 800;
+    margin: 15px 0;
+    position: relative;
+    z-index: 1;
+}
+
+.card-price span {
+    font-size: 1rem;
+    font-weight: 500;
+    opacity: 0.9;
+}
+
+.card-body {
+    padding: 40px;
+    background: var(--white);
+    position: relative;
+    z-index: 1;
+}
+
+.features-list {
+    list-style: none;
+    margin-bottom: 35px;
+}
+
+.features-list li {
+    padding: 14px 0;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    padding-left: 35px;
+}
+
+.features-list li:before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-medium);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+/* CLUB VIRTUAL - Con imagen de fondo dinámica */
+.virtual-club {
+    background: linear-gradient(rgba(246, 244, 247, 0.9), rgba(246, 244, 247, 0.9)), 
+                url('https://images.unsplash.com/photo-1534438327276-14e5300c3a48?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    position: relative;
+}
+
+.virtual-content {
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.virtual-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.virtual-text h2 {
+    font-size: 2.5rem;
+    color: var(--primary-dark);
+    margin-bottom: 20px;
+}
+
+.virtual-text p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.virtual-image {
+    flex: 1;
+    min-width: 300px;
+    position: relative;
+}
+
+.virtual-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    transition: transform 0.5s ease;
+}
+
+.virtual-image:hover img {
+    transform: scale(1.03);
+}
+
+/* EXCLUSIVOS - Con efecto parallax */
+.exclusive-benefits {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-medium) 100%);
+    color: var(--white);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.exclusive-benefits .section-title {
+    color: var(--white);
+}
+
+.exclusive-benefits .section-title::after {
+    background: var(--accent);
+}
+
+.benefit-highlight {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.highlight-item {
+    background: rgba(255, 255, 255, 0.12);
+    padding: 35px 25px;
+    border-radius: 25px;
+    max-width: 320px;
+    width: 100%;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.4s ease;
+}
+
+.highlight-item:hover {
+    background: rgba(255, 255, 255, 0.18);
+    transform: translateY(-10px);
+}
+
+.highlight-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    color: var(--white);
+}
+
+.highlight-item .pompo-img {
+    width: 120px;
+    height: 120px;
+    margin: 20px auto 0;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid rgba(255,255,255,0.2);
+    transition: all 0.3s ease;
+}
+
+.highlight-item:hover .pompo-img {
+    border-color: var(--accent);
+    transform: scale(1.1);
+}
+
+.highlight-item .pompo-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* FOOTER - Rediseñado */
+footer {
+    background: linear-gradient(135deg, var(--primary-dark) 0%, #5a2d57 100%);
+    color: var(--neutral-light);
+    padding: 80px 0 40px;
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, var(--accent), var(--primary-light));
+}
+
+.footer-content {
+    display: flex;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+}
+
+.footer-column {
+    flex: 1;
+    min-width: 240px;
+}
+
+.footer-column h4 {
+    color: var(--white);
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-column h4::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    background: var(--accent);
+    bottom: 0;
+    left: 0;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    transition: color 0.3s ease;
+    opacity: 0.9;
+}
+
+.footer-links a:hover {
+    color: var(--white);
+    opacity: 1;
+    padding-left: 5px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background: var(--accent);
+    transform: translateY(-5px);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+/* ANIMACIONES DE ENTRADA */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .section-title {
+        font-size: 2.4rem;
+    }
+    
+    nav ul {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 160px 0 100px;
+    }
+    
+    .hero h1 {
+        font-size: 2.3rem;
+    }
+    
+    .section {
+        padding: 70px 0;
+    }
+    
+    .membership-plans {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .membership-card {
+        max-width: 100%;
+    }
+    
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .btn {
+        padding: 14px 28px;
+    }
+    
+    .hero-price {
+        font-size: 2.5rem;
+    }
+}
+
+/* SCROLLBAR PERSONALIZADA */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--gray-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--primary-medium), var(--primary-dark));
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(var(--primary-dark), var(--primary-medium));
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="container header-container">
+        <div class="logo">
+            <img src="images/pompompurin1.png" alt="Planet Fitness con Pompopurin">
+            <div class="logo-text">Planet Fitness</div>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#benefits">Beneficios</a></li>
+                <li><a href="#memberships">Membresías</a></li>
+                <li><a href="#virtual">Club Virtual</a></li>
+                <li><a href="#exclusive" class="btn btn-secondary">Únete Gratis</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container hero-content">
+        <div class="hero-text">
+            <div class="hero-bubble animate__animated animate__bounceIn">ENTRENA A TU RITMO CON POMPOPURIN</div>
+            <h1 class="fade-in">Planet Fitness México</h1>
+            <p class="fade-in">Un gimnasio amable, accesible y pensado para todos. Donde Pompopurin te acompaña en cada paso.</p>
+            <div class="hero-promo fade-in">
+                <strong>OFERTA ESPECIAL DE LANZAMIENTO</strong>
+                <div class="hero-price">$0 + $0</div>
+                <span>inscripción · anualidad · los primeros 100 miembros</span>
+            </div>
+            <a href="#memberships" class="btn btn-secondary fade-in">Inscríbete ya</a>
+        </div>
+        <div class="hero-image">
+            <img src="images/pompompurin2.png" alt="Pompopurin entrenando" class="fade-in">
+        </div>
+    </div>
+</section>
+
+<section class="section benefits" id="benefits">
+    <div class="container">
+        <h2 class="section-title fade-in">¿QUÉ OBTIENES?</h2>
+        <div class="benefits-grid">
+            <div class="benefit-card fade-in">
+                <div class="benefit-icon"><i class="fas fa-dumbbell"></i></div>
+                <h3>Entrenamiento guiado</h3>
+                <p>Apoyo real, sin presión. Rutinas personalizadas para todos los niveles.</p>
+                <div class="pompo-img">
+                    <img src="images/pompompurin3.png" alt="Pompopurin entrenando con pesas">
+                </div>
+            </div>
+            <div class="benefit-card fade-in">
+                <div class="benefit-icon"><i class="fas fa-clock"></i></div>
+                <h3>Horario flexible 24/5</h3>
+                <p>Entrena cuando tú quieras. La mayoría de nuestros clubs abren 24 horas entre semana.</p>
+                <div class="pompo-img">
+                    <img src="images/pompompurin4.png" alt="Pompopurin descansando">
+                </div>
+            </div>
+            <div class="benefit-card fade-in">
+                <div class="benefit-icon"><i class="fas fa-users"></i></div>
+                <h3>Ambiente amable</h3>
+                <p>Todos son bienvenidos. Sin intimidación, sin juicios, solo apoyo mutuo.</p>
+                <div class="pompo-img">
+                    <img src="images/pompompurin5.png" alt="Pompopurin saludando">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section" id="memberships">
+    <div class="container">
+        <h2 class="section-title fade-in">MEMBRESÍAS</h2>
+        <p style="text-align: center; margin-bottom: 50px; font-size: 1.2rem; color: var(--primary-dark);" class="fade-in">Elige la membresía que mejor se adapte a tu estilo de vida. Ambas incluyen a Pompopurin como tu entrenador animador.</p>
+        
+        <div class="membership-plans">
+            <div class="membership-card fade-in">
+                <div class="card-header">
+                    <h3>MEMBRESÍA CLÁSICA</h3>
+                    <div class="card-price">$279<span>/mes*</span></div>
+                    <p>Perfecta para entrenar cerca de casa</p>
+                </div>
+                <div class="card-body">
+                    <ul class="features-list">
+                        <li>Acceso ilimitado al club local</li>
+                        <li>Clases grupales incluidas</li>
+                        <li>App de entrenamiento gratuita</li>
+                        <li>Apoyo de entrenadores</li>
+                        <li>Sin compromiso de permanencia</li>
+                        <li>Área de cardio y pesas</li>
+                    </ul>
+                    <button class="btn" style="width: 100%;">Elegir Clásica</button>
+                </div>
+            </div>
+
+            <div class="membership-card fade-in">
+                <div class="card-header premium">
+                    <h3>PF BLACK CARD®</h3>
+                    <div class="card-price">$499<span>/mes*</span></div>
+                    <p>La experiencia completa de Planet Fitness</p>
+                </div>
+                <div class="card-body">
+                    <ul class="features-list">
+                        <li>Todo lo de la Clásica, más:</li>
+                        <li>Acceso a +2,700 clubes mundialmente</li>
+                        <li>Invitado gratis siempre</li>
+                        <li>Black Card Spa (masaje, bronceado*)</li>
+                        <li>50% de descuento en bebidas</li>
+                        <li>Área de recuperación premium</li>
+                        <li>Descuentos en productos PF</li>
+                    </ul>
+                    <button class="btn btn-secondary" style="width: 100%;">Elegir Black Card</button>
+                </div>
+            </div>
+        </div>
+        
+        <p style="text-align: center; margin-top: 30px; font-size: 0.9rem; color: #666;" class="fade-in">*Los detalles pueden variar según el club. Consulta términos en clubes participantes.</p>
+    </div>
+</section>
+
+<section class="section virtual-club" id="virtual">
+    <div class="container virtual-content">
+        <div class="virtual-text fade-in">
+            <h2>Conoce el club virtualmente con Pompopurin</h2>
+            <p>Explora nuestras instalaciones antes de venir. Pompopurin te guiará por cada área del gimnasio y te mostrará cómo sacar el máximo provecho de tu membresía.</p>
+            <p>Aprende sobre las diferentes zonas: cardio, pesas, clases grupales y áreas de recuperación. Todo desde la comodidad de tu casa.</p>
+            <button class="btn btn-secondary" style="margin-top: 20px;">Iniciar tour virtual</button>
+        </div>
+        <div class="virtual-image fade-in">
+            <img src="images/pompompurin6.png" alt="Pompopurin en el gimnasio">
+        </div>
+    </div>
+</section>
+
+<section class="section exclusive-benefits" id="exclusive">
+    <div class="container">
+        <h2 class="section-title fade-in">BENEFICIOS EXCLUSIVOS</h2>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 50px; font-size: 1.2rem; opacity: 0.9;" class="fade-in">Con la membresía PF Black Card®, accede a privilegios únicos que harán de tu experiencia fitness algo extraordinario.</p>
+        
+        <div class="benefit-highlight">
+            <div class="highlight-item fade-in">
+                <h3>Invitado siempre gratis</h3>
+                <p>Trae a un amigo o familiar cada vez que vengas. Comparte la experiencia fitness.</p>
+                <div class="pompo-img">
+                    <img src="images/pompompurin7.png" alt="Pompopurin con amigo">
+                </div>
+            </div>
+            <div class="highlight-item fade-in">
+                <h3>Acceso mundial</h3>
+                <p>Usa cualquiera de nuestros +2,700 clubes en el mundo. Tu membresía te sigue.</p>
+                <div class="pompo-img">
+                    <img src="images/pompompurin8.png" alt="Pompopurin viajando">
+                </div>
+            </div>
+            <div class="highlight-item fade-in">
+                <h3>Black Card Spa</h3>
+                <p>Relájate en nuestra zona exclusiva con sillones de masaje y áreas de recuperación.</p>
+                <div class="pompo-img">
+                    <img src="images/pompompurin9.png" alt="Pompopurin relajado">
+                </div>
+            </div>
+        </div>
+        
+        <div style="text-align: center; margin-top: 60px;" class="fade-in">
+            <a href="#memberships" class="btn" style="background: var(--accent);">¡Quiero estos beneficios!</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-column fade-in">
+                <h4>Planet Fitness México</h4>
+                <p>Un gimnasio y club de fitness para todos. Donde Pompopurin te recibe con una sonrisa en cada visita.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-column fade-in">
+                <h4>Enlaces rápidos</h4>
+                <ul class="footer-links">
+                    <li><a href="#benefits">Beneficios</a></li>
+                    <li><a href="#memberships">Membresías</a></li>
+                    <li><a href="#virtual">Club Virtual</a></li>
+                    <li><a href="#">Encuentra un club</a></li>
+                    <li><a href="#">Trabaja con nosotros</a></li>
+                </ul>
+            </div>
+            <div class="footer-column fade-in">
+                <h4>Legal</h4>
+                <ul class="footer-links">
+                    <li><a href="#">Términos y condiciones</a></li>
+                    <li><a href="#">Aviso de privacidad</a></li>
+                    <li><a href="#">Contratos de membresía</a></li>
+                    <li><a href="#">Preguntas frecuentes</a></li>
+                </ul>
+            </div>
+            <div class="footer-column fade-in">
+                <h4>Contacto</h4>
+                <ul class="footer-links">
+                    <li><i class="fas fa-phone" style="margin-right: 10px;"></i> 800 123 4567</li>
+                    <li><i class="fas fa-envelope" style="margin-right: 10px;"></i> hola@planetfitness.mx</li>
+                    <li><i class="fas fa-map-marker-alt" style="margin-right: 10px;"></i> CDMX y principales ciudades</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="copyright fade-in">
+            <p>© 2026 Planet Fitness México. Todos los derechos reservados.</p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">*Consulta términos y condiciones en planetfitness.mx/promos/terminosycondiciones</p>
+            <p style="margin-top: 10px; font-size: 0.8rem;">Pompopurin es la mascota oficial de Planet Fitness México. Gimnasio para todos.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+// Animación de elementos al hacer scroll
+document.addEventListener('DOMContentLoaded', function() {
+    const fadeElements = document.querySelectorAll('.fade-in');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    fadeElements.forEach(element => {
+        observer.observe(element);
+    });
+    
+    // Efecto de cambio de header al hacer scroll
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 100) {
+            header.style.background = 'rgba(255, 255, 255, 0.98)';
+            header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+        } else {
+            header.style.background = 'rgba(255, 255, 255, 0.95)';
+            header.style.boxShadow = '0 4px 20px rgba(0,0,0,0.08)';
+        }
+    });
+    
+    // Simulación de interacción de botones
+    document.querySelectorAll('.btn').forEach(button => {
+        button.addEventListener('click', function(e) {
+            // Efecto de clic
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+            }, 200);
+            
+            // Si es un botón de membresía, mostrar mensaje
+            if (this.textContent.includes('Elegir')) {
+                e.preventDefault();
+                const cardHeader = this.closest('.membership-card').querySelector('.card-header h3').textContent;
+                alert(`¡Excelente elección! Has seleccionado la membresía ${cardHeader}. Te contactaremos pronto para completar tu inscripción.`);
+            }
+        });
+    });
+    
+    // Contador para la oferta especial
+    const offerCountdown = () => {
+        const offerElement = document.querySelector('.hero-promo strong');
+        if (offerElement) {
+            // Simular contador de miembros restantes
+            let membersLeft = 42;
+            setInterval(() => {
+                if (membersLeft > 0) {
+                    membersLeft--;
+                    offerElement.textContent = `OFERTA ESPECIAL - QUEDAN ${membersLeft} CUPOS`;
+                }
+            }, 60000); // Cambia cada minuto (ajustable)
+        }
+    };
+    
+    offerCountdown();
+    
+    // Efecto de hover mejorado para tarjetas
+    document.querySelectorAll('.benefit-card, .highlight-item, .membership-card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.zIndex = '10';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.zIndex = '1';
+        });
+    });
+});
+</script>
+
+</body>
+</html>
