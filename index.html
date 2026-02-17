@@ -6,13 +6,13 @@
 <title>Planet Fitness México | Entrena a tu ritmo con Pompopurin</title>
 <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
-<!-- Botón de volver al portafolio - Estilos añadidos -->
+<!-- Botón de volver al portafolio - Estilos ajustados -->
 <style>
-    /* Botón flotante para volver al portafolio */
+    /* Botón para volver al portafolio - AHORA A LA DERECHA */
     .back-to-portfolio {
         position: fixed;
         top: 20px;
-        left: 20px;
+        right: 20px;  /* Cambiado de left a right */
         z-index: 9999;
         background: rgba(107, 63, 105, 0.9);
         backdrop-filter: blur(5px);
@@ -45,9 +45,16 @@
     @media (max-width: 768px) {
         .back-to-portfolio {
             top: 10px;
-            left: 10px;
+            right: 10px;  /* También ajustado a la derecha */
             padding: 6px 12px;
             font-size: 0.8rem;
+        }
+    }
+
+    /* Pequeño margen superior para el header en móviles */
+    @media (max-width: 768px) {
+        .header-container {
+            padding-top: 50px;  /* Espacio para el botón en móviles */
         }
     }
 </style>
@@ -854,7 +861,7 @@ footer::before {
 
 <body>
 
-<!-- Botón discreto para volver al portafolio -->
+<!-- Botón discreto para volver al portafolio - AHORA A LA DERECHA -->
 <a href="https://24040062pax.github.io/saber-hacer-2/" class="back-to-portfolio">
     <i class="fas fa-arrow-left"></i> Volver al Portafolio
 </a>
@@ -1156,4 +1163,3 @@ document.addEventListener('DOMContentLoaded', function() {
 
 </body>
 </html>
-
